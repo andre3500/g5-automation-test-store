@@ -72,7 +72,7 @@ it('Log in 2-02 - Incorrect Password - Test 2', () => {
     })
 
     it('Log in 2-04 - Incorrect Password - Test 4: reset 2', () => {
-        cy.visit('/index.php?rt=account/login');
+        cy.visit('/index.php?rt=account/forgotten/password');
 
     
       cy.log('**Password Reset - empty email...**');
@@ -85,7 +85,7 @@ it('Log in 2-02 - Incorrect Password - Test 2', () => {
     })
 
     it('Log in 2-05 - Incorrect Password - Test 5: Happy path', () => {
-        cy.visit('/index.php?rt=account/login');
+        cy.visit('/index.php?rt=account/forgotten/password');
     
       cy.log('**Password Reset Happy ...**');
       cy.get('#forgottenFrm_loginname').type(user.loginName);
@@ -141,7 +141,7 @@ cy.get('#forgottenFrm_email').clear();
 
 
 it('Log in 3-04 - Incorrect Username - Test 4', () => {   
-     cy.visit('/index.php?rt=account/login');
+     cy.visit('/index.php?rt=account/forgotten/loginname');
 
 cy.log('**UsernameReset - empty email...**');
 cy.get('#forgottenFrm_lastname').type(user.loginName);
@@ -154,7 +154,7 @@ cy.get('#forgottenFrm_email').clear();
 })
 
 it('Log in 3-05 - Incorrect Username - Test 5', () => {   
-     cy.visit('/index.php?rt=account/login');
+     cy.visit('/index.php?rt=account/forgotten/loginname');
 
 cy.log('**Username Reset Happy ...**');
 cy.get('#forgottenFrm_lastname').type("Vowel");
