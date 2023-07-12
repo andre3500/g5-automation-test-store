@@ -46,4 +46,7 @@ it('Registration', () => {
 
     cy.log('**Verifying "My account" page ...**');
     cy.get('.heading1 .subtext').should('have.text', user.firstName);
+
+
+    
   })
