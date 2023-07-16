@@ -5,7 +5,7 @@ export function loginViaUI(user) {
     cy.get('#loginFrm_loginname').type(user.loginName);
     cy.get('#loginFrm_password').type(user.password);
     cy.get('#loginFrm button').click();
-}
+} 
 
 export function login2(loginName, password) {
     cy.visit('/index.php?rt=account/login');
@@ -13,5 +13,14 @@ export function login2(loginName, password) {
     cy.log('**Submit login form ...**');
     loginName ? cy.get('#loginFrm_loginname').type(loginName) : cy.log('User login name is empty, skip entering login name')
     password ? cy.get('#loginFrm_password').type(password) : cy.log('User password is empty, skip entering password')
+    cy.get('#loginFrm button').click();
+}
+
+export function findProductByName(product, ) {
+    cy.visit('/index.php?rt=account/login');
+//cy.get(".thumbnails.grid.row.list-inline").find(productName)
+    cy.log('**Submit login form ...**');
+    loginName ? cy.get('#loginFrm_loginname').type(loginName) : cy.log('User login name is empty, skip entering login name')
+
     cy.get('#loginFrm button').click();
 }

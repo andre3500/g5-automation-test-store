@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import user from '../fixtures/user.json';
+import product from '../fixtures/product.json';
 import {loginViaUI} from '../support/helper';
 
 it('Place order', () => {
@@ -34,14 +35,14 @@ it('Place order', () => {
 
 it('Place order HW', () => {
 
-  loginViaUI(user);
+  loginViaUI(user); //передавати ТОВАР з хелпера замість юзера
   
   cy.log('Add random product to cart from main page')
   cy.visit('/');
 
   cy.get('input#filter_keyword').type('i{enter}');
 
-  findProductByName('Acqua Di Gio Pour Homme');
+  findProductByName('Acqua Di Gio Pour Homme');// назва товару ґкий я шукаю 
 
   //cy.get('.productcart').first().click();
   //cy.get('.quick_basket').click();
